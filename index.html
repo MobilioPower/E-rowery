@@ -3,113 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-Wynajem Brzesko</title>
+<title>E-Wynajem Brzesko - Rowery Elektryczne</title>
 <style>
 :root{
-  --green:#1b5e20;
-  --green2:#2e7d32;
-  --bg:#f3f8f3;
+  --green: #1b5e20;
+  --green2: #2e7d32;
+  --bg: #f3f8f3;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:#222;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: #222;
+  line-height: 1.6;
 }
+
 header{
-  background:linear-gradient(135deg,var(--green),var(--green2));
-  color:white;
-  padding:35px 20px;
-  text-align:center;
+  background: linear-gradient(135deg, var(--green), var(--green2));
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
 }
+
 .logo{
-  font-size:44px;
-  font-weight:bold;
-  letter-spacing:2px;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
+
 .logo span{
-  border:2px solid white;
-  border-radius:50%;
-  padding:5px 12px;
-  display:inline-block;
+  border: 3px solid white;
+  border-radius: 50%;
+  padding: 5px 15px;
+  display: inline-block;
 }
+
 .subtitle{
-  margin-top:10px;
-  font-size:15px;
-  opacity:0.95;
+  font-size: 16px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 10px auto;
 }
+
 .container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:18px;
-}
-.card{
-  background:white;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 4px 12px rgba(0,0,0,0.08);
-  transition:0.2s;
-}
-.card:hover{
-  transform:translateY(-3px);
-}
-.card-img{
-  height:140px;
-  background:#dfeee0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  color:#666;
-}
-.card-body{
-  padding:12px;
-}
-.title{
-  font-weight:bold;
-  margin-bottom:6px;
-}
-.price{
-  color:var(--green);
-  font-weight:bold;
-  margin:6px 0;
-}
-.status{
-  font-size:12px;
-  padding:3px 8px;
-  border-radius:10px;
-  display:inline-block;
-  background:#e8f5e9;
-  color:var(--green);
-}
-.btn{
-  display:block;
-  text-align:center;
-  background:var(--green2);
-  color:white;
-  padding:10px;
-  border-radius:8px;
-  text-decoration:none;
-  margin-top:10px;
-  font-size:14px;
-}
-.btn:hover{
-  background:var(--green);
-}
+
 .section-title{
-  margin:25px 0 10px;
-  font-size:18px;
+  margin: 40px 0 20px;
+  font-size: 24px;
+  color: var(--green);
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 5px;
 }
+
+/* Grid i Karty */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.card{
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Galeria w karcie */
+.main-img-container {
+  height: 200px;
+  background: #eee;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+}
+
+.thumb-bar {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  overflow-x: auto;
+}
+
+.thumb {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.thumb:hover, .thumb.active {
+  opacity: 1;
+  border-color: var(--green2);
+}
+
+.card-body{
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.price{
+  color: var(--green);
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.status{
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #e8f5e9;
+  color: var(--green);
+  align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+.btn{
+  display: block;
+  text-align: center;
+  background: var(--green2);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: auto;
+}
+
+.btn:hover{
+  background: var(--green);
+  transform: translateY(-2px);
+}
+
+/* Sekcja Jak to działa */
+.info-box {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+}
+
+.steps-list li {
+  margin-bottom: 15px;
+  padding-left: 35px;
+  position: relative;
+}
+
+.steps-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: bold;
+  font-size: 20px;
+}
+
 footer{
-  text-align:center;
-  padding:25px;
-  font-size:13px;
-  color:#666;
+  text-align: center;
+  padding: 40px;
+  font-size: 14px;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .logo { font-size: 36px; }
+  .grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -117,112 +218,115 @@ footer{
 
 <header>
   <div class="logo"><span>E</span>⚡</div>
-  <div class="subtitle">Wynajem i serwis sprzętu elektromobilnego</div>
-  <h1>Wynajem rowerów elektrycznych – Brzesko</h1>
-  <p>Abonament: 120 – 209 zł / miesiąc</p>
+  <div class="subtitle">Profesjonalny wynajem i serwis sprzętu elektromobilnego w Brzesku</div>
+  <h1>Rowery Elektryczne – Abonament</h1>
+  <p>Ceny już od 120 zł brutto za miesiąc</p>
 </header>
 
 <div class="container">
 
-  <div class="section-title">Dostępne rowery (15 szt.)</div>
+  <div class="section-title">Nasza Flota (15 rowerów)</div>
 
-  <div class="grid">
-
-    <script>
-    <script>
-for(let i=1;i<=15;i++){
-
-if(i === 1){
-document.write(`
-<div class="card">
-
-<div class="slider">
-<img id="bikeImg" src="img1.jpg">
-</div>
-
-<div class="card-body">
-<h3>E-Bike ${i} (Premium)</h3>
-
-<p>
-Mocny silnik 250W, zasięg do 60 km, idealny do codziennych dojazdów.
-Rower po przeglądzie, gotowy do jazdy.
-</p>
-
-<p class="price">209 zł / miesiąc</p>
-
-<button onclick="nextImg()">Zmień zdjęcie</button>
-<button onclick="selectBike(${i})">Rezerwuj</button>
-
-</div>
-</div>
-`);
-}
-else{
-document.write(`
-<div class="card">
-<img src="https://images.unsplash.com/photo-1518655048521-f130df041f66">
-<div class="card-body">
-<h3>E-Bike ${i}</h3>
-<p>Stan: sprawny</p>
-<p class="price">${120 + (i*5)} zł / miesiąc</p>
-<button onclick="selectBike(${i})">Rezerwuj</button>
-</div>
-</div>
-`);
-}
-
-}
-</script>
-      ];
-
-      bikes.forEach((name,i)=>{
-        let price = 120 + (i%5)*22;
-        document.write(`
-          <div class="card">
-            <div class="card-img">Zdjęcie roweru</div>
-            <div class="card-body">
-              <div class="title">${name}</div>
-              <div class="status">Dostępny</div>
-              <div class="price">${price} zł / miesiąc</div>
-              <a class="btn" href="tel:+48123456789">Zadzwoń / Rezerwuj</a>
-            </div>
-          </div>
-        `);
-      });
-    </script>
-<script>
-let images = [
-"Rower2a.jpg",
-"Rower2b.jpg",
-"Rower2c.jpg",
-"Rower2d.jpg",
-"Rower2e.jpg"
-];
-
-let index = 0;
-
-function nextImg(){
-  index++;
-  if(index >= images.length) index = 0;
-  document.getElementById("bikeImg").src = images[index];
-}
-</script>
-.slider img {
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-bottom:1px solid #ddd;
-}
-  </div>
+  <div id="bike-grid" class="grid">
+    </div>
 
   <div class="section-title">Jak to działa?</div>
-  <p>1. Wybierasz rower<br>2. Kontaktujesz się telefonicznie<br>3. Podpisujemy umowę wynajmu<br>4. Odbierasz rower w Brzesku</p>
+  <div class="info-box">
+    <ul class="steps-list">
+      <li><strong>Wybierz model:</strong> Przejrzyj listę dostępnych rowerów i wybierz ten, który najlepiej pasuje do Twoich potrzeb.</li>
+      <li><strong>Zadzwoń do nas:</strong> Skontaktuj się telefonicznie, aby potwierdzić rezerwację i umówić się na odbiór.</li>
+      <li><strong>Podpisz umowę:</strong> Przygotuj dowód osobisty. Formalności trwają nie więcej niż 10 minut.</li>
+      <li><strong>Ciesz się jazdą:</strong> Odbierz naładowany rower w Brzesku i korzystaj z ekologicznego transportu.</li>
+    </ul>
+  </div>
 
 </div>
 
 <footer>
-  Brzesko • Wynajem i serwis elektromobilności • E⚡
+  &copy; 2026 E-Wynajem Brzesko • Ul. Przykładowa 123, Brzesko • <a href="tel:+48123456789" style="color:inherit;">+48 123 456 789</a>
 </footer>
+
+<script>
+// Baza danych rowerów
+const bikes = [
+  {
+    name: "Gazelle City Comfort",
+    price: 120,
+    desc: "Klasyczny rower miejski z niską ramą. Idealny na dojazdy do pracy.",
+    images: ["https://via.placeholder.com/400x300/2e7d32/ffffff?text=Gazelle+1", "https://via.placeholder.com/400x300/1b5e20/ffffff?text=Gazelle+2"]
+  },
+  {
+    name: "Kross E-Urban 2.0",
+    price: 142,
+    desc: "Nowoczesny design i mocny silnik wspomagający podjazdy pod wzniesienia.",
+    images: ["https://via.placeholder.com/400x300/2e7d32/ffffff?text=Kross+1", "https://via.placeholder.com/400x300/1b5e20/ffffff?text=Kross+2"]
+  },
+  {
+    name: "Specialized Turbo Vado",
+    price: 209,
+    desc: "Segment premium. Największy zasięg baterii i wysoka kultura pracy.",
+    images: ["https://via.placeholder.com/400x300/2e7d32/ffffff?text=Specialized+1", "https://via.placeholder.com/400x300/1b5e20/ffffff?text=Specialized+2"]
+  }
+  // Możesz tutaj dodać kolejne 12 obiektów według wzoru
+];
+
+// Generowanie pozostałych 12 rowerów automatycznie dla demonstracji
+for(let i = 4; i <= 15; i++) {
+    bikes.push({
+        name: `E-bike Model ${i}`,
+        price: 120 + (i * 5),
+        desc: "Solidny rower elektryczny sprawdzony w warunkach miejskich.",
+        images: ["https://via.placeholder.com/400x300/2e7d32/ffffff?text=Rower+" + i, "https://via.placeholder.com/400x300/cccccc/000000?text=Detale+" + i]
+    });
+}
+
+const grid = document.getElementById('bike-grid');
+
+function renderBikes() {
+  bikes.forEach((bike, bikeIdx) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    
+    // Generowanie HTML miniatur
+    const thumbsHtml = bike.images.map((img, imgIdx) => `
+      <img src="${img}" 
+           class="thumb ${imgIdx === 0 ? 'active' : ''}" 
+           onclick="changeImage(this, ${bikeIdx})" 
+           alt="Miniatura">
+    `).join('');
+
+    card.innerHTML = `
+      <div class="main-img-container">
+        <img src="${bike.images[0]}" id="main-img-${bikeIdx}" alt="${bike.name}">
+      </div>
+      <div class="thumb-bar">
+        ${thumbsHtml}
+      </div>
+      <div class="card-body">
+        <div class="status">Dostępny</div>
+        <div class="title">${bike.name}</div>
+        <div class="desc">${bike.desc}</div>
+        <div class="price">${bike.price} zł / m-c</div>
+        <a href="tel:+48123456789" class="btn">Zarezerwuj teraz</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// Funkcja do zmiany zdjęcia głównego
+window.changeImage = function(thumbEl, bikeIdx) {
+    const mainImg = document.getElementById(`main-img-${bikeIdx}`);
+    mainImg.src = thumbEl.src;
+    
+    // Aktualizacja ramki aktywnej miniatury
+    const thumbs = thumbEl.parentElement.querySelectorAll('.thumb');
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumbEl.classList.add('active');
+}
+
+renderBikes();
+</script>
 
 </body>
 </html>
