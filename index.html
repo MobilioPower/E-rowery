@@ -129,10 +129,50 @@ footer{
   <div class="grid">
 
     <script>
-      const bikes = [
-        "Gazelle City E-bike","Kross E-Urban","Rower trekking E1","E-bike Comfort","E-bike Sport",
-        "E-bike City 2","E-bike Trek 3","E-bike Urban Light","E-bike Power","E-bike Basic",
-        "E-bike Pro","E-bike Eco","E-bike Motion","E-bike Flex","E-bike Standard"
+    <script>
+for(let i=1;i<=15;i++){
+
+if(i === 1){
+document.write(`
+<div class="card">
+
+<div class="slider">
+<img id="bikeImg" src="img1.jpg">
+</div>
+
+<div class="card-body">
+<h3>E-Bike ${i} (Premium)</h3>
+
+<p>
+Mocny silnik 250W, zasięg do 60 km, idealny do codziennych dojazdów.
+Rower po przeglądzie, gotowy do jazdy.
+</p>
+
+<p class="price">209 zł / miesiąc</p>
+
+<button onclick="nextImg()">Zmień zdjęcie</button>
+<button onclick="selectBike(${i})">Rezerwuj</button>
+
+</div>
+</div>
+`);
+}
+else{
+document.write(`
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518655048521-f130df041f66">
+<div class="card-body">
+<h3>E-Bike ${i}</h3>
+<p>Stan: sprawny</p>
+<p class="price">${120 + (i*5)} zł / miesiąc</p>
+<button onclick="selectBike(${i})">Rezerwuj</button>
+</div>
+</div>
+`);
+}
+
+}
+</script>
       ];
 
       bikes.forEach((name,i)=>{
@@ -150,7 +190,29 @@ footer{
         `);
       });
     </script>
+<script>
+let images = [
+"Rower2a.jpg",
+"Rower2b.jpg",
+"Rower2c.jpg",
+"Rower2d.jpg",
+"Rower2e.jpg"
+];
 
+let index = 0;
+
+function nextImg(){
+  index++;
+  if(index >= images.length) index = 0;
+  document.getElementById("bikeImg").src = images[index];
+}
+</script>
+.slider img {
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-bottom:1px solid #ddd;
+}
   </div>
 
   <div class="section-title">Jak to działa?</div>
