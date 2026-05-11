@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-Wynajem Brzesko - Rowery Elektryczne</title>
+<title>E-Wynajem/Serwis - Rowery Elektryczne</title>
 <style>
 :root{
   --green: #1b5e20;
@@ -217,7 +217,7 @@ footer{
 <body>
 
 <header>
-  <div class="logo"><span>Mobilio</span>⚡</div>
+  <div class="logo">Mobilio⚡</div>
   <div class="subtitle">Profesjonalny wynajem i serwis sprzętu elektromobilnego w Brzesku</div>
   <h1>Rowery Elektryczne – Abonament</h1>
   <p>Ceny już od 120 zł brutto za miesiąc</p>
@@ -248,38 +248,50 @@ footer{
 </footer>
 
 <script>
-// Baza danych rowerów
+// Baza danych rowerów 
 const bikes = [
   {
-    name: "Gazelle City Comfort",
-    price: 120,
+    name: "Gazelle City Orange C7",
+    price: 160,
     desc: "Klasyczny rower miejski. Idealny na dojazdy do pracy.",
     images: ["Images/Rower2a.jpg", "Images/Rower2b.jpg", "Images/Rower2c.jpg", "Images/Rower2d.jpg"]
   },
   {
     name: "Bikkel",
     price: 142,
-    desc: "Nowoczesny design i mocny silnik wspomagający podjazdy pod wzniesienia.",
-    images: ["Images/Rower1a.jpg", "Images/Rower1b.jpg"]
+    desc: "Rower miejski przeznaczony do codzennego użytkowania.",
+    images: ["Images/Rower1a.jpg", "Images/Rower1b.jpg", "Images/Rower1c.jpg"]
   },
   {
-    name: "Specialized Turbo Vado",
+    name: "Batavus",
     price: 209,
     desc: "Segment premium. Największy zasięg baterii i wysoka kultura pracy.",
-    images: ["https://via.placeholder.com/400x300/2e7d32/ffffff?text=Specialized+1", "https://via.placeholder.com/400x300/1b5e20/ffffff?text=Specialized+2"]
+    images: ["Images/Rower3a.jpg", "Images/Rower3b.jpg", "Images/Rower3c.jpg", "Images/Rower4d.jpg"]
   }
+  {
+    name: "Stella",
+    price: 142,
+    desc: "Klasyczny rower damski.",
+    images: ["Images/Rower4a.jpg", "Images/Rower4b.jpg", "Images/Rower4c.jpg", "Images/Rower4d.jpg", "Images/Rower4e.jpg"]
+  },
+ {
+    name: "Trek",
+    price: 142,
+    desc: "Nowoczesny design i mocny silnik wspomagający podjazdy pod wzniesienia.",
+    images: ["Images/Rower5a.jpg", "Images/Rower5b.jpg", "Images/Rower5c.jpg", "Images/Rower5d.jpg", "Images/Rower5e.jpg"]
+  },
   // Możesz tutaj dodać kolejne 12 obiektów według wzoru
-];
+//];
 
 // Generowanie pozostałych 12 rowerów automatycznie dla demonstracji
-for(let i = 4; i <= 15; i++) {
-    bikes.push({
-        name: `E-bike Model ${i}`,
-        price: 120 + (i * 5),
-        desc: "Solidny rower elektryczny sprawdzony w warunkach miejskich.",
-        images: ["https://via.placeholder.com/400x300/2e7d32/ffffff?text=Rower+" + i, "https://via.placeholder.com/400x300/cccccc/000000?text=Detale+" + i]
-    });
-}
+//for(let i = 4; i <= 15; i++) {
+    //bikes.push({
+        //name: `E-bike Model ${i}`,
+        //price: 120 + (i * 5),
+        //desc: "Solidny rower elektryczny sprawdzony w warunkach miejskich.",
+        //images: ["https://via.placeholder.com/400x300/2e7d32/ffffff?text=Rower+" + i, "https://via.placeholder.com/400x300/cccccc/000000?text=Detale+" + i]
+    //});
+//}
 
 const grid = document.getElementById('bike-grid');
 
