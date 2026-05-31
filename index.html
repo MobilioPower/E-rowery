@@ -256,8 +256,6 @@ footer{
        TREŚĆ Z ULOTKI
        ===================================================== -->
 
-  <div class="subtitle">Dojazd do pracy taniej i wygodniej bez korków</div>
-
   <h1>Dlaczego warto wybrać e-bike?</h1>
 
   <div style="max-width:900px;margin:20px auto;text-align:left;background:rgba(255,255,255,0.12);padding:20px;border-radius:12px;">
@@ -373,7 +371,8 @@ function renderBikes() {
         ${thumbsHtml}
       </div>
       <div class="card-body">
-        <div class="status">${bikeIdx === 0 ? "Niedostępny" : "Dostępny"}</div>
+        <div class="status">${bikeIdx === 1 ? "Niedostępny" : "Dostępny"}</div>
+        <div class="status">${bikeIdx === 3 ? "Niedostępny" : "Dostępny"}</div>
         <div class="title">${bike.name}</div>
         <div class="desc">${bike.desc}</div>
         <div class="price">${bike.price} zł / m-c</div>
