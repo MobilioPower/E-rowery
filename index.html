@@ -253,20 +253,19 @@ footer{
   <div class="logo-container" style="margin-bottom:20px;">
     <img src="test/grafika 2.png" alt="Mobilio Logo" style="max-width:450px;width:100%;height:auto;">
   </div>
-
-  //<div class="logo">Mobilio⚡</div>
+  // <div class="logo">Mobilio⚡</div>
   <div class="subtitle">Dlaczego warto wybrać e-bike?</div>
  <p>Oszczędzasz do 300–500 zł miesięcznie względem auta.</p>
- //<p>Zyskujesz czas – omijasz korki i dojeżdżasz punktualnie.</p>
+ // <p>Zyskujesz czas – omijasz korki i dojeżdżasz punktualnie.</p>
  <p>Zero problemów z parkowaniem.</p>
  <p>Dbasz o zdrowie i środowisko.</p>
  <p>Idealny dystans 1–7 km do pracy, szkoły i miasta.</p>
  <p>GPS i ochrona przed kradzieżą.</p>
 <h1>Test sprzętu bez zobowiązań – już od 49 zł za 3 dni lub abonament od 150 zł/miesiąc.</h1>
 
-  //<h1>Rowery Elektryczne – Abonament</h1>
-  //<p>Ceny już od 120 zł brutto za miesiąc</p>
-  //<h1>Testuj przez 3 dni – nie pasuje? Oddajesz.</h1>
+  // <h1>Rowery Elektryczne – Abonament</h1>
+  // <p>Ceny już od 120 zł brutto za miesiąc</p>
+  // <h1>Testuj przez 3 dni – nie pasuje? Oddajesz.</h1>
 
 </header>
 
@@ -350,7 +349,7 @@ function renderBikes() {
     // NOWE - MOBILIO
     // PIERWSZY ROWER OZNACZONY JAKO WYNAJĘTY
     // =====================================================
-    if(bikeIdx === 0){
+    if(bikeIdx === 1){
       card.classList.add('rented');
     }
     
@@ -364,13 +363,13 @@ function renderBikes() {
 
     card.innerHTML = `
       <div class="main-img-container">
-        <img src="${bike.images[0]}" id="main-img-${bikeIdx}" alt="${bike.name}">
+        <img src="${bike.images[1]}" id="main-img-${bikeIdx}" alt="${bike.name}">
       </div>
       <div class="thumb-bar">
         ${thumbsHtml}
       </div>
       <div class="card-body">
-        <div class="status">Niedostępny</div>
+        // <div class="status">Dostępny</div>
         <div class="title">${bike.name}</div>
         <div class="desc">${bike.desc}</div>
         <div class="price">${bike.price} zł / m-c</div>
