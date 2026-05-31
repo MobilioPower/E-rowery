@@ -3,343 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-Wynajem/Serwis - Rowery Elektryczne</title>
+<title>Mobilio - Wynajem i Serwis Rowerów Elektrycznych</title>
 <style>
-:root{
-  --green: #1b5e20;
-  --green2: #2e7d32;
-  --bg: #f3f8f3;
-  --shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-body{
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--bg);
-  color: #222;
-  line-height: 1.6;
-}
-
-header{
-  background: linear-gradient(135deg, var(--green), var(--green2));
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.logo{
-  font-size: 48px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
-
-.logo span{
-  border: 3px solid white;
-  border-radius: 50%;
-  padding: 5px 15px;
-  display: inline-block;
-}
-
-.subtitle{
-  font-size: 16px;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 10px auto;
-}
-
-.container{
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-.section-title{
-  margin: 40px 0 20px;
-  font-size: 24px;
-  color: var(--green);
-  border-bottom: 2px solid var(--green);
-  padding-bottom: 5px;
-}
-
-/* Grid i Karty */
-.grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
-
-.card{
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-}
-
-/* Galeria w karcie */
-.main-img-container {
-  height: 200px;
-  background: #eee;
-  position: relative;
-  overflow: hidden;
-}
-
-.main-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.3s;
-}
-
-.thumb-bar {
-  display: flex;
-  gap: 5px;
-  padding: 10px;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  overflow-x: auto;
-}
-
-.thumb {
-  width: 50px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 4px;
-  cursor: pointer;
-  opacity: 0.6;
-  border: 2px solid transparent;
-  transition: 0.2s;
-}
-
-.thumb:hover, .thumb.active {
-  opacity: 1;
-  border-color: var(--green2);
-}
-
-.card-body{
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.title{
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.desc {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.price{
-  color: var(--green);
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.status{
-  font-size: 12px;
-  font-weight: bold;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: #e8f5e9;
-  color: var(--green);
-  align-self: flex-start;
-  margin-bottom: 10px;
-}
-
-.btn{
-  display: block;
-  text-align: center;
-  background: var(--green2);
-  color: white;
-  padding: 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  margin-top: auto;
-}
-
-.btn:hover{
-  background: var(--green);
-  transform: translateY(-2px);
-}
-
-/* Sekcja Jak to działa */
-.info-box {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-
-.steps-list {
-  list-style: none;
-  padding: 0;
-}
-
-.steps-list li {
-  margin-bottom: 15px;
-  padding-left: 35px;
-  position: relative;
-}
-
-.steps-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--green);
-  font-weight: bold;
-  font-size: 20px;
-}
-
-footer{
-  text-align: center;
-  padding: 40px;
-  font-size: 14px;
-  color: #888;
-}
-
-@media (max-width: 600px) {
-  .logo { font-size: 36px; }
-  .grid { grid-template-columns: 1fr; }
-}
+:root{--green:#1b5e20;--green2:#2e7d32;--bg:#f3f8f3;--shadow:0 4px 12px rgba(0,0,0,.08);}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg)}
+header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:30px 20px;text-align:center}
+.logo-img{max-width:420px;width:100%;background:#fff;border-radius:12px;padding:10px}
+.container{max-width:1200px;margin:auto;padding:20px}
+.hero{background:#fff;padding:25px;border-radius:16px;box-shadow:var(--shadow);margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.main-img-container{height:220px;position:relative}
+.main-img-container img{width:100%;height:100%;object-fit:cover}
+.unavailable .main-img-container img{filter:grayscale(100%) blur(2px) brightness(0.8)}
+.unavailable .main-img-container::after{
+content:'WYNAJĘTY';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+font-size:38px;font-weight:bold;color:white;background:rgba(100,100,100,.45);backdrop-filter:blur(4px)}
+.card-body{padding:20px}
+.status{display:inline-block;padding:5px 10px;border-radius:20px}
+.status.available{background:#e8f5e9;color:#1b5e20}
+.status.unavailable{background:#eee;color:#666}
+.thumb-bar{display:flex;gap:5px;padding:10px}.thumb{width:50px;height:40px;object-fit:cover}
+.info{background:#fff;padding:25px;border-radius:16px;box-shadow:var(--shadow);margin-top:20px}
 </style>
-</head>
-<body>
-
+</head><body>
 <header>
-  <div class="logo">Mobilio⚡</div>
-  <div class="subtitle">Profesjonalny wynajem i serwis sprzętu elektromobilnego w Brzesku</div>
-  <h1>Rowery Elektryczne – Abonament</h1>
-  <p>Ceny już od 120 zł brutto za miesiąc</p>
-  <h1>Testuj przez 3 dni – nie pasuje? Oddajesz.</h1>
+<img src="grafika 2.png" class="logo-img" alt="Mobilio">
+<h1>Wynajem i serwis rowerów elektrycznych</h1>
+<p>Dojazd do pracy taniej i wygodniej bez korków</p>
 </header>
-
 <div class="container">
-
-  <div class="section-title">Nasza obecnie dostępna Flota (10 rowerów)</div>
-
-  <div id="bike-grid" class="grid">
-    </div>
-
-  <div class="section-title">Jak to działa?</div>
-  <div class="info-box">
-    <ul class="steps-list">
-      <li><strong>Wybierz model:</strong> Przejrzyj listę dostępnych rowerów i wybierz ten, który najlepiej pasuje do Twoich potrzeb.</li>
-      <li><strong>Zadzwoń do nas:</strong> Skontaktuj się telefonicznie, aby potwierdzić rezerwację i umówić się na odbiór.</li>
-      <li><strong>Podpisz umowę:</strong> Przygotuj dowód osobisty. Formalności trwają nie więcej niż 10 minut.</li>
-      <li><strong>Ciesz się jazdą:</strong> Odbierz naładowany rower w Brzesku i korzystaj z ekologicznego transportu.</li>
-    </ul>
-  </div>
-
+<div class="hero">
+<h2>Dlaczego warto wybrać e-bike?</h2>
+<ul>
+<li>Oszczędzasz do 300–500 zł miesięcznie względem auta.</li>
+<li>Zyskujesz czas – omijasz korki i dojeżdżasz punktualnie.</li>
+<li>Zero problemów z parkowaniem.</li>
+<li>Dbasz o zdrowie i środowisko.</li>
+<li>Idealny dystans 1–7 km do pracy, szkoły i miasta.</li>
+<li>GPS i ochrona przed kradzieżą.</li>
+</ul>
+<p><strong>Test sprzętu bez zobowiązań – już od 49 zł za 3 dni lub abonament od 150 zł/miesiąc.</strong></p>
 </div>
 
-<footer>
-  &copy; 2026 E-Wynajem Mobilio &copy • Ul. Łączyska 48, Brzesko • <a href="tel:+48667360520" style="color:inherit;">+48 667360520</a>
-</footer>
+<h2>Nasza flota</h2>
+<div id="bike-grid" class="grid"></div>
+
+<div class="info">
+<h2>Serwis i naprawa</h2>
+<ul>
+<li>Szybkie terminy</li>
+<li>Oryginalne części</li>
+<li>Przeglądy okresowe</li>
+<li>Bezpieczeństwo na pierwszym miejscu</li>
+</ul>
+
+<h2>Wynajem</h2>
+<ul>
+<li>Krótko- i długoterminowy</li>
+<li>Elastyczne warunki</li>
+<li>Idealny dla firm, studentów i turystów</li>
+<li>Rowery gotowe do jazdy</li>
+</ul>
+
+<h2>Jak to działa?</h2>
+<ol>
+<li>Wybierz termin testu lub wynajmu.</li>
+<li>Przetestuj sprzęt w realnych warunkach.</li>
+<li>Podejmij decyzję bez presji.</li>
+<li>Jeździj wygodnie i oszczędnie.</li>
+</ol>
+
+<p><strong>Kontakt:</strong> +48 667 360 520 | mobilio@interia.eu<br>
+Łączyska 48, 32-800 Brzesko</p>
+</div>
+</div>
 
 <script>
-// Baza danych rowerów 
-const bikes = [
-  {
-    name: "Gazelle City Orange C7",
-    price: 160,
-    desc: "Klasyczny rower miejski. Idealny na dojazdy do pracy.",
-    images: ["Images/Rower2a.jpg", "Images/Rower2b.jpg", "Images/Rower2c.jpg", "Images/Rower2d.jpg"]
-  },
-  {
-    name: "Bikkel",
-    price: 142,
-    desc: "Rower miejski przeznaczony do codzennego użytkowania.",
-    images: ["Images/Rower1a.jpg", "Images/Rower1b.jpg", "Images/Rower1c.jpg"]
-  },
-  {
-    name: "Batavus",
-    price: 209,
-    desc: "Segment premium. Największy zasięg baterii i wysoka kultura pracy.",
-    images: ["Images/Rower3a.jpg", "Images/Rower3b.jpg", "Images/Rower3c.jpg", "Images/Rower4d.jpg"]
-  },
-  {
-    name: "Stella",
-    price: 120,
-    desc: "Klasyczny rower damski.",
-    images: ["Images/Rower4a.jpg", "Images/Rower4b.jpg", "Images/Rower4c.jpg", "Images/Rower4d.jpg", "Images/Rower4e.jpg"]
-  },
- {
-    name: "Trek",
-    price: 175,
-    desc: "Nowoczesny design i mocny silnik wspomagający podjazdy pod wzniesienia.",
-    images: ["Images/Rower5a.jpg", "Images/Rower5b.jpg", "Images/Rower5c.jpg", "Images/Rower5d.jpg", "Images/Rower5e.jpg"]
-  },
-  // Możesz tutaj dodać kolejne 12 obiektów według wzoru
+const bikes=[
+{name:"Gazelle City Orange C7",price:160,desc:"Klasyczny rower miejski.",unavailable:true,images:["Images/Rower2a.jpg","Images/Rower2b.jpg"]},
+{name:"Bikkel",price:142,desc:"Rower miejski do codziennego użytkowania.",images:["Images/Rower1a.jpg"]},
+{name:"Batavus",price:209,desc:"Segment premium.",images:["Images/Rower3a.jpg"]},
+{name:"Stella",price:150,desc:"Klasyczny rower damski.",images:["Images/Rower4a.jpg"]}
 ];
-
-// Generowanie pozostałych 12 rowerów automatycznie dla demonstracji
-//for(let i = 4; i <= 15; i++) {
-    //bikes.push({
-        //name: `E-bike Model ${i}`,
-        //price: 120 + (i * 5),
-        //desc: "Solidny rower elektryczny sprawdzony w warunkach miejskich.",
-        //images: ["https://via.placeholder.com/400x300/2e7d32/ffffff?text=Rower+" + i, "https://via.placeholder.com/400x300/cccccc/000000?text=Detale+" + i]
-    //});
-//}
-
-const grid = document.getElementById('bike-grid');
-
-function renderBikes() {
-  bikes.forEach((bike, bikeIdx) => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    
-    // Generowanie HTML miniatur
-    const thumbsHtml = bike.images.map((img, imgIdx) => `
-      <img src="${img}" 
-           class="thumb ${imgIdx === 0 ? 'active' : ''}" 
-           onclick="changeImage(this, ${bikeIdx})" 
-           alt="Miniatura">
-    `).join('');
-
-    card.innerHTML = `
-      <div class="main-img-container">
-        <img src="${bike.images[0]}" id="main-img-${bikeIdx}" alt="${bike.name}">
-      </div>
-      <div class="thumb-bar">
-        ${thumbsHtml}
-      </div>
-      <div class="card-body">
-        <div class="status">Dostępny</div>
-        <div class="title">${bike.name}</div>
-        <div class="desc">${bike.desc}</div>
-        <div class="price">${bike.price} zł / m-c</div>
-        <a href="tel:+48123456789" class="btn">Zarezerwuj teraz</a>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-}
-
-// Funkcja do zmiany zdjęcia głównego
-window.changeImage = function(thumbEl, bikeIdx) {
-    const mainImg = document.getElementById(`main-img-${bikeIdx}`);
-    mainImg.src = thumbEl.src;
-    
-    // Aktualizacja ramki aktywnej miniatury
-    const thumbs = thumbEl.parentElement.querySelectorAll('.thumb');
-    thumbs.forEach(t => t.classList.remove('active'));
-    thumbEl.classList.add('active');
-}
-
-renderBikes();
+const grid=document.getElementById('bike-grid');
+bikes.forEach((bike,i)=>{
+ const card=document.createElement('div');
+ card.className='card '+(bike.unavailable?'unavailable':'');
+ card.innerHTML=`<div class="main-img-container"><img src="${bike.images[0]}"></div>
+ <div class="card-body">
+ <div class="status ${bike.unavailable?'unavailable':'available'}">${bike.unavailable?'Niedostępny':'Dostępny'}</div>
+ <h3>${bike.name}</h3><p>${bike.desc}</p><div><b>${bike.price} zł / m-c</b></div></div>`;
+ grid.appendChild(card);
+});
 </script>
-
-</body>
-</html>
+</body></html>
