@@ -355,7 +355,7 @@ function renderBikes() {
      if(bikeIdx === 3){
       card.classList.add('rented');
     }
-    // Generowanie HTML miniatur
+    // Generowanie HTML miniatury 1
     const thumbsHtml = bike.images.map((img, imgIdx) => `
       <img src="${img}" 
            class="thumb ${imgIdx === 0 ? 'active' : ''}" 
@@ -382,6 +382,32 @@ function renderBikes() {
   });
 }
 
+// Generowanie HTML miniatury 2
+const thumbsHtml = bike.images.map((img, imgIdx) => `
+      <img src="${img}" 
+           class="thumb ${imgIdx === 3 ? 'active' : ''}" 
+           onclick="changeImage(this, ${bikeIdx})" 
+           alt="Miniatura">
+    `).join('');
+
+    card.innerHTML = `
+      <div class="main-img-container">
+        <img src="${bike.images[0]}" id="main-img-${bikeIdx}" alt="${bike.name}">
+      </div>
+      <div class="thumb-bar">
+        ${thumbsHtml}
+      </div>
+      <div class="card-body">
+        <div class="status">${bikeIdx === 3 ? "Niedostępny" : "Dostępny"}</div>
+        <div class="title">${bike.name}</div>
+        <div class="desc">${bike.desc}</div>
+        <div class="price">${bike.price} zł / m-c</div>
+        <a href="tel:+48 667360520" class="btn">Zarezerwuj teraz</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
 // Funkcja do zmiany zdjęcia głównego
 window.changeImage = function(thumbEl, bikeIdx) {
     const mainImg = document.getElementById(`main-img-${bikeIdx}`);
