@@ -248,10 +248,8 @@ footer{
        LOGO FIRMY
        ===================================================== -->
   <div class="logo-container" style="margin-bottom:20px;">
-    <img src="grafika 2.png" alt="Mobilio Logo" style="max-width:450px;width:100%;height:auto;">
+    <img src="test/grafika 2.png" alt="Mobilio Logo" style="max-width:450px;width:100%;height:auto;">
   </div>
-
-  <div class="logo">Mobilio⚡</div>
 
   <!-- =====================================================
        NOWE - MOBILIO
@@ -353,10 +351,12 @@ function renderBikes() {
     // NOWE - MOBILIO
     // PIERWSZY ROWER JEST WYNAJĘTY
     // =====================================================
-    if(bikeIdx === 0){
+    if(bikeIdx === 1){
       card.classList.add('rented');
     }
-    
+     if(bikeIdx === 3){
+      card.classList.add('rented');
+    }
     // Generowanie HTML miniatur
     const thumbsHtml = bike.images.map((img, imgIdx) => `
       <img src="${img}" 
@@ -377,7 +377,7 @@ function renderBikes() {
         <div class="title">${bike.name}</div>
         <div class="desc">${bike.desc}</div>
         <div class="price">${bike.price} zł / m-c</div>
-        <a href="tel:+48123456789" class="btn">Zarezerwuj teraz</a>
+        <a href="tel:+48 667360520" class="btn">Zarezerwuj teraz</a>
       </div>
     `;
     grid.appendChild(card);
