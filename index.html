@@ -349,7 +349,7 @@ function renderBikes() {
     // NOWE - MOBILIO
     // PIERWSZY ROWER JEST WYNAJĘTY
     // =====================================================
-    if(bikeIdx === 1 || bikeIdx === 3){
+    if(bikeIdx === 10 || bikeIdx === 30){
   card.classList.add('rented');
 }
     // Generowanie HTML miniatury 1
@@ -369,7 +369,7 @@ function renderBikes() {
       </div>
       <div class="card-body">
         <div class="status">
-  ${bikeIdx === x || bikeIdx === x ? "Niedostępny" : "Dostępny"}</div>
+  ${bikeIdx === 10 || bikeIdx === 30 ? "Niedostępny" : "Dostępny"}</div>
         <div class="title">${bike.name}</div>
         <div class="desc">${bike.desc}</div>
         <div class="price">${bike.price} zł / m-c</div>
